@@ -35,6 +35,8 @@ PRIMARY KEY(Course_Number),
 FOREIGN KEY(Course_Number) REFERENCES Course(Course_Number) );
 ```
 
+![OUTPUT](1b1.png)
+
 ## 2.Display the decription of each table
 ```
 DESC Student;
@@ -43,6 +45,10 @@ DESC Section;
 DESC Grade_Report;
 DESC Prerequisite;
 ```
+
+![OUTPUT](1b2.png)
+
+
 ## 3.Insert the values specified by the above database
 ```
 INSERT INTO Student VALUES('Smith',17,1,'CS'),('Brown',8,2,'CS'),('Jaylor',25,3,'Math');
@@ -52,6 +58,9 @@ INSERT INTO Grade_Report VALUES(17,85,'A'),(8,92,'B'),(25,102,'A');
 INSERT INTO prerequisite VALUES(1301,1301),(3320,1310);
 COMMIT;
 ```
+![OUTPUT](1b3.png)
+
+
 ## 4.Display the instances of each table in the database
 ```
 SELECT * FROM Student;
@@ -60,60 +69,88 @@ SELECT * FROM Section;
 SELECT * FROM Grade_Report;
 SELECT * FROM Prerequisite;
 ```
+
+![OUTPUT](1b4.png)
+
+
 ## 5.All branch attribute in student table and Describe the table
 ```
 ALTER TABLE Student
 ADD Branch VARCHAR2(20);
 DESC Student;
 ```
+![OUTPUT](1b5.png)
+
+
 ## 6.Copy Major attribure values into branch attribute and display it
 ```
 UPDATE Student
 SET Branch = Major;
 SELECT * FROM Student;
 ```
+
+![OUTPUT](1b6.png)
+
+
 ## 7.Remove the Major attribute in Student
 ```
 ALTER TABLE Student
 DROP COLUMN Major;
 ```
+![output](1b7.png)
+
 ## 8.Change the name of Course_number to cid in course and describe it
 ```
 ALTER TABLE Course
 RENAME COLUMN Course_Number TO CID;
 DESC Course;
 ```
+![output](1b8.png)
+
 ## 9.change the value of credit-hrs of database to 4 in course
 ```
 UPDATE Course
 SET Credit_Hrs = 4;
 SELECT * FROM Course;
 ```
+
+
 ## 10.Put NOT NULL CONSTRAINT to column branch in student
 ```
 ALTER TABLE Student
 MODIFY BRANCH VARCHAR2(20) NOT NULL;
 ```
+![output](1b10.png)
+
 ## 11.Replace the student table name to pupil
 ```
 RENAME Student to pupil;
 ```
+![output](1b11.png)
+
 ## 12.Remove the student table
 ```
 DROP TABLE student;
 ```
+![output](1b12.png)
+
 ## 13.Remove the rows of 'Fall' Semester in section
 ```
 DELETE FROM Section
 WHERE Semester = 'Fall';
 COMMIT;
 ```
+
+![output](1b13.png)
+
 ## 14.Remove the row of 'Data_structure' in Course
 ```
 DELETE FROM Course
 WHERE Course_Name = 'Data_Structure';
 COMMIT;
 ```
+![output](1b14.png)
+
 ## 15.Remove all rows in all tables using TRUNCATE table
 ```
 TRUNCATE TABLE Grade_Report;
@@ -122,6 +159,8 @@ TRUNCATE TABLE Section;
 TRUNCATE TABLE Course;
 TRUNCATE TABLE Pupil;
 ```
+![output](1b15.png)
+
 ## 16.Remove pupil, course and section table so that it exist in recycle bin
 ```
 DROP TABLE Pupil;
@@ -133,3 +172,4 @@ DROP TABLE Section;
 DROP TABLE Grade_Report PURGE;
 DROP TABLE Prerequisite PURGE;
 ```
+![output](1b17.png)
