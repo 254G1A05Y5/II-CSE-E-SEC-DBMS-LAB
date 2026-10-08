@@ -12,7 +12,8 @@ CREATE TABLE EMPLOYEE
 );
 ```
 ![output](10.1.png)
-##Step 3: Insert sample records
+
+## Step 3: Insert sample records
 ```
 INSERT INTO EMPLOYEE VALUES (101, 'Ravi', 'CSE', 45000);
 INSERT INTO EMPLOYEE VALUES (102, 'Sita', 'ECE', 50000);
@@ -41,6 +42,7 @@ SELECT *
 FROM TABLE(DBMS_XPLAN.DISPLAY);
 ```
 ![output](10.4.png)
+
 ##Step 6: Create index on search column
 ```
 CREATE INDEX EMP_NAME_INDEX
@@ -64,7 +66,7 @@ SELECT *
 FROM TABLE(DBMS_XPLAN.DISPLAY);
 ```
 ![output](10.6.png)
-##Step 9 & 10: Display index information
+## Step 9 & 10: Display index information
 ```
 SELECT INDEX_NAME,
        TABLE_NAME,
